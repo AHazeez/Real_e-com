@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login - Wake Cake</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="background-color: var(--color-bg-cream); min-height: 100vh; display:flex; flex-direction:column; justify-content:space-between;">
+
+    <!-- Minimal Header -->
+    <header style="border-bottom: 1px solid var(--color-sand-border);">
+        <div class="container navbar" style="height: 70px;">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍰</span>
+                <span>Wake Cake</span>
+            </a>
+            <a href="products.html" style="font-size:14px; font-weight:600; color:var(--color-primary-chocolate);">← Back to Store</a>
+        </div>
+    </header>
+
+    <!-- Login Box -->
+    <main class="container">
+        <div class="auth-wrapper">
+            <div class="auth-header">
+                <h1 class="auth-title">Welcome Back</h1>
+                <p class="auth-subtitle">Login to manage orders and track deliveries.</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label" for="login-email">Email Address</label>
+                    <input type="email" id="login-email" required class="form-control" placeholder="you@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input type="password" id="login-password" required class="form-control" placeholder="••••••••">
+                </div>
+
+                <div class="form-link-row">
+                    <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="forgot-password.html" class="form-link">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; height:46px; margin-bottom: 20px;">Login</button>
+            </form>
+
+            <div style="text-align: center; font-size: 14px; color: var(--color-text-muted);">
+                Don't have an account? <a href="register.html" class="form-link">Register here</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer copyright -->
+    <footer style="padding: 24px 0; background-color: var(--color-primary-chocolate); color: var(--color-white); font-size: 13px; text-align: center; opacity: 0.95;">
+        <p>&copy; 2026 Wake Cake Bakery. All rights reserved.</p>
+    </footer>
+
+    <!-- API and Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('login-form').onsubmit = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value;
+
+            try {
+                const { user } = await window.wakeCakeAPI.loginUser(email, password);
+                window.showToast(`Welcome back, ${user.name}!`, 'success');
+                setTimeout(() => {
+                    if (user?.role === 'Admin') {
+                        window.location.href = 'admin/dashboard.html';
+                        return;
+                    }
+
+                    window.location.href = 'index.html';
+                }, 1000);
+
+            } catch (error) {
+                window.showToast(error.message || 'Invalid email credentials or password.', 'error');
+            }
+        };
+    </script>
+</body>
+</html>

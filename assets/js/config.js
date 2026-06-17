@@ -1,0 +1,1 @@
+window.WAKE_CAKE_API_BASE_URL = window.WAKE_CAKE_API_BASE_URL || '';

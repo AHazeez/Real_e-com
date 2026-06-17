@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Details - Wake Cake</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍰</span>
+                <span>Wake Cake</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Cakes</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-btn" aria-label="Shopping Cart">
+                    🛒
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="hamburger" aria-label="Open Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Details Main Content -->
+    <section class="section">
+        <div class="container">
+            <div class="details-grid">
+                
+                <!-- Left: Galleries -->
+                <div class="gallery-container">
+                    <div class="main-image-wrapper">
+                        <img src="" id="details-main-img" alt="Product Main View" class="main-image">
+                    </div>
+                    <div class="thumbnail-row">
+                        <!-- Loaded dynamically by cart.js -->
+                    </div>
+                </div>
+
+                <!-- Right: Details summary -->
+                <div class="details-content">
+                    <span id="details-category" class="product-card-cat">Chocolate Cakes</span>
+                    <h1 id="details-name">Elegant Chocolate Fudge Cake</h1>
+                    
+                    <div class="details-rating" style="display:flex; align-items:center; gap:8px;">
+                        <span id="details-stars" class="rating-stars" style="color:var(--color-star); font-size:18px;">★★★★★</span>
+                        <span id="details-rating-value" class="rating-value">4.8 Rating</span>
+                    </div>
+
+                    <div id="details-price" class="details-price">$35.99</div>
+                    
+                    <p id="details-desc" class="details-desc">
+                        Rich double-layered chocolate fudge cake coated with luxurious dark chocolate ganache and chocolate curls.
+                    </p>
+
+                    <!-- Tabs details (Desc/Ingredients) -->
+                    <div class="info-tabs">
+                        <div class="tabs-nav">
+                            <button class="tab-btn active" data-tab="tab-desc">Description</button>
+                            <button class="tab-btn" data-tab="tab-ingr">Ingredients & Allergens</button>
+                        </div>
+                        <div id="tab-desc" class="tab-panel active">
+                            <p id="tab-desc-content"></p>
+                        </div>
+                        <div id="tab-ingr" class="tab-panel">
+                            <p id="tab-ingr-content"></p>
+                        </div>
+                    </div>
+
+                    <!-- Quantity, Stock status and Add actions -->
+                    <div style="margin-bottom: 20px;">
+                        <strong style="font-size: 14px; display:block; margin-bottom:8px;">Availability:</strong>
+                        <span id="details-stock-msg" style="font-weight: 600;">In Stock</span>
+                    </div>
+
+                    <div class="actions-row">
+                        <div class="qty-selector">
+                            <button id="qty-minus" class="qty-btn">-</button>
+                            <input type="text" id="details-qty" value="1" readonly class="qty-input">
+                            <button id="qty-plus" class="qty-btn">+</button>
+                        </div>
+                        <button id="details-add-to-cart" class="btn btn-primary" style="flex-grow:1; height:46px;">Add to Cart</button>
+                        <button id="details-buy-now" class="btn btn-secondary" style="height:46px;">Buy Now</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section section-bg-white" style="border-top:1px solid var(--color-sand-border); border-bottom:1px solid var(--color-sand-border);">
+        <div class="container" style="max-width: 900px;">
+            <h2 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: 30px; color: var(--color-primary-chocolate);">Customer Reviews</h2>
+            
+            <div id="reviews-list" style="margin-bottom: 50px;">
+                <!-- Dynamically injected reviews -->
+            </div>
+
+            <!-- Review write form -->
+            <div style="background-color: var(--color-bg-cream); padding: 30px; border-radius: var(--border-radius-md); border:1px solid var(--color-sand-border);">
+                <h3 style="font-family: var(--font-heading); font-size: 22px; margin-bottom: 20px; color: var(--color-primary-chocolate);">Write a Review</h3>
+                <form id="review-form">
+                    <div class="form-group">
+                        <label class="form-label" for="rev-author">Your Name</label>
+                        <input type="text" id="rev-author" required class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="rev-rating">Rating</label>
+                        <select id="rev-rating" class="form-control" style="background:#fff;">
+                            <option value="5">5 Stars - Outstanding</option>
+                            <option value="4">4 Stars - Very Good</option>
+                            <option value="3">3 Stars - Good</option>
+                            <option value="2">2 Stars - Fair</option>
+                            <option value="1">1 Star - Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="rev-comment">Review Comments</label>
+                        <textarea id="rev-comment" rows="4" required class="form-control" placeholder="Tell others what you think about this cake..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section">
+        <div class="container">
+            <h2 style="font-family: var(--font-heading); font-size: 32px; text-align: center; margin-bottom: 50px; color: var(--color-primary-chocolate);">You May Also Like</h2>
+            <div id="related-grid" class="products-grid">
+                <!-- Loaded dynamically by cart.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:white; margin-bottom: 20px;">
+                    <span class="logo-icon">🍰</span>
+                    <span>Wake Cake</span>
+                </a>
+                <p class="footer-desc">Crafting premium, mouth-watering cakes that elevate your celebrations and deliver pure happiness to your doorstep.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn">FB</a>
+                    <a href="#" class="social-btn">IG</a>
+                    <a href="#" class="social-btn">TW</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Our Cakes</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Birthday Cakes</a></li>
+                    <li><a href="products.html">Wedding Cakes</a></li>
+                    <li><a href="products.html">Cupcakes</a></li>
+                    <li><a href="products.html">Custom Cakes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Store Location</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <p>520 Patisserie Avenue, Sweetwood, NY 10022</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <p>+1 (800) 555-CAKE</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <p>hello@wakecake.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Wake Cake Bakery. All rights reserved.</p>
+            <p>Designed for Sweet Moments.</p>
+        </div>
+    </footer>
+
+    <!-- API and Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

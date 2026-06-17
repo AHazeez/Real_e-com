@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FAF5F0" />
+      <stop offset="100%" stop-color="#EAD5C3" />
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="150" cy="130" r="110" fill="url(#bg-grad)" />
+  
+  <!-- Shadows -->
+  <ellipse cx="105" cy="195" rx="35" ry="8" fill="#5C4033" opacity="0.15" />
+  <ellipse cx="195" cy="195" rx="35" ry="8" fill="#5C4033" opacity="0.15" />
+
+  <!-- Cupcake Left -->
+  <!-- Case -->
+  <path d="M 85 150 L 90 190 A 15 5 0 0 0 120 190 L 125 150 Z" fill="#D4A373" />
+  <!-- Pleats lines -->
+  <line x1="93" y1="150" x2="96" y2="190" stroke="#A97C50" stroke-width="1.5" />
+  <line x1="105" y1="150" x2="105" y2="191" stroke="#A97C50" stroke-width="1.5" />
+  <line x1="117" y1="150" x2="114" y2="190" stroke="#A97C50" stroke-width="1.5" />
+  <!-- Sponge -->
+  <ellipse cx="105" cy="150" rx="22" ry="8" fill="#E9C46A" />
+  <!-- Pink Frosting -->
+  <path d="M 85 145 C 80 140 130 140 125 145 C 120 130 90 130 105 145" fill="#E76F51" />
+  <circle cx="105" cy="132" r="10" fill="#F4A261" />
+  <circle cx="105" cy="123" r="5" fill="#E63946" />
+
+  <!-- Cupcake Right -->
+  <!-- Case -->
+  <path d="M 175 150 L 180 190 A 15 5 0 0 0 210 190 L 215 150 Z" fill="#CCD5AE" />
+  <!-- Pleats lines -->
+  <line x1="183" y1="150" x2="186" y2="190" stroke="#A3B19B" stroke-width="1.5" />
+  <line x1="195" y1="150" x2="195" y2="191" stroke="#A3B19B" stroke-width="1.5" />
+  <line x1="207" y1="150" x2="204" y2="190" stroke="#A3B19B" stroke-width="1.5" />
+  <!-- Sponge -->
+  <ellipse cx="195" cy="150" rx="22" ry="8" fill="#E9C46A" />
+  <!-- Whipped cream frosting -->
+  <path d="M 175 145 C 170 140 220 140 215 145 C 210 130 180 130 195 145" fill="#FFFFFF" />
+  <circle cx="195" cy="132" r="10" fill="#FAF0E6" />
+  <circle cx="195" cy="123" r="5" fill="#E63946" />
+</svg>

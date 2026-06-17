@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FAF5F0" />
+      <stop offset="100%" stop-color="#D4C5B9" />
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="150" cy="130" r="110" fill="url(#bg-grad)" />
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="205" rx="90" ry="15" fill="#2B1E17" opacity="0.15" />
+  
+  <!-- Plate -->
+  <ellipse cx="150" cy="200" rx="95" ry="10" fill="#EAE0D5" />
+  <ellipse cx="150" cy="197" rx="95" ry="10" fill="#22150F" />
+
+  <!-- Cake Base Body (Dark espresso brown) -->
+  <path d="M 70 140 L 70 185 A 80 15 0 0 0 230 185 L 230 140 Z" fill="#22150F" />
+  
+  <!-- Glaze layer reflection -->
+  <ellipse cx="150" cy="140" rx="80" ry="15" fill="#3D261C" />
+
+  <!-- Coffee Cream Piping details -->
+  <!-- Top swirls -->
+  <circle cx="95" cy="135" r="7" fill="#C6AC8F" />
+  <circle cx="120" cy="130" r="7" fill="#C6AC8F" />
+  <circle cx="150" cy="128" r="7" fill="#C6AC8F" />
+  <circle cx="180" cy="130" r="7" fill="#C6AC8F" />
+  <circle cx="205" cy="135" r="7" fill="#C6AC8F" />
+
+  <!-- Espresso Beans (little brown ovals on top of swirls) -->
+  <ellipse cx="95" cy="133" rx="4" ry="2.5" fill="#1A0F0A" transform="rotate(-15 95 133)" />
+  <ellipse cx="120" cy="128" rx="4" ry="2.5" fill="#1A0F0A" transform="rotate(20 120 128)" />
+  <ellipse cx="150" cy="126" rx="4" ry="2.5" fill="#1A0F0A" />
+  <ellipse cx="180" cy="128" rx="4" ry="2.5" fill="#1A0F0A" transform="rotate(-20 180 128)" />
+  <ellipse cx="205" cy="133" rx="4" ry="2.5" fill="#1A0F0A" transform="rotate(15 205 133)" />
+
+  <!-- Dusting effect inside mirror glaze -->
+  <ellipse cx="150" cy="142" rx="50" ry="8" fill="none" stroke="#C6AC8F" stroke-width="1.5" stroke-dasharray="4,6" />
+</svg>

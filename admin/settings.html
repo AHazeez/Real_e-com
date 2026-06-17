@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Settings - Wake Cake Admin</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+
+    <!-- Mobile Header -->
+    <div class="admin-mobile-header">
+        <div style="font-weight:700; font-size:18px;">🍰 Wake Cake Admin</div>
+        <button class="admin-hamburger" aria-label="Toggle Sidebar">☰</button>
+    </div>
+
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <span>🍰</span>
+                <span>Wake Cake <span class="brand-orange">Admin</span></span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><span>📊</span> Dashboard</a></li>
+                <li class="sidebar-item"><a href="products.html" class="sidebar-link"><span>🎂</span> Products</a></li>
+                <li class="sidebar-item"><a href="orders.html" class="sidebar-link"><span>🛒</span> Orders</a></li>
+                <li class="sidebar-item"><a href="inventory.html" class="sidebar-link"><span>📦</span> Inventory</a></li>
+                <li class="sidebar-item"><a href="customers.html" class="sidebar-link"><span>👥</span> Customers</a></li>
+                <li class="sidebar-item"><a href="reports.html" class="sidebar-link"><span>📈</span> Reports</a></li>
+                <li class="sidebar-item"><a href="settings.html" class="sidebar-link active"><span>⚙️</span> Settings</a></li>
+            </ul>
+            <div style="padding: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
+                <a href="#" id="admin-logout-btn" class="sidebar-link" style="padding:0; color:#E07A5F;"><span>🚪</span> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-title">
+                    <h1>Bakery Platform Settings</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle-btn" class="theme-toggle">🌙</button>
+                </div>
+            </header>
+
+            <!-- Settings form card -->
+            <div class="card" style="max-width: 800px;">
+                <div class="card-header">
+                    <h2 class="card-title">Company Configuration</h2>
+                </div>
+                <div class="card-body">
+                    <form id="settings-form">
+                        
+                        <div class="form-group">
+                            <label for="set-company">Bakery Company Name</label>
+                            <input type="text" id="set-company" required class="form-control-admin">
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="set-email">Support Email Address</label>
+                                <input type="email" id="set-email" required class="form-control-admin">
+                            </div>
+                            <div class="form-group">
+                                <label for="set-phone">Support Contact Phone</label>
+                                <input type="text" id="set-phone" required class="form-control-admin">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="set-address">Bakery Headquarters Address</label>
+                            <textarea id="set-address" rows="3" required class="form-control-admin"></textarea>
+                        </div>
+
+                        <h3 style="font-size: 16px; margin: 30px 0 15px 0; border-bottom: 1px solid var(--admin-card-border); padding-bottom: 8px;">Social Media Handles</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="set-instagram">Instagram Profile URL</label>
+                                <input type="url" id="set-instagram" class="form-control-admin">
+                            </div>
+                            <div class="form-group">
+                                <label for="set-facebook">Facebook Profile URL</label>
+                                <input type="url" id="set-facebook" class="form-control-admin">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="set-twitter">Twitter Profile URL</label>
+                            <input type="url" id="set-twitter" class="form-control-admin">
+                        </div>
+
+                        <h3 style="font-size: 16px; margin: 30px 0 15px 0; border-bottom: 1px solid var(--admin-card-border); padding-bottom: 8px;">Logistic Configurations</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="set-delivery">Standard Delivery Fee ($)</label>
+                                <input type="number" step="0.01" id="set-delivery" required class="form-control-admin">
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 30px; display: flex; justify-content: flex-end;">
+                            <button type="submit" class="btn-admin btn-admin-primary" style="padding:12px 28px;">💾 Save Configurations</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Database and Admin scripts -->
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>

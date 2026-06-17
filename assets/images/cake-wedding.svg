@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FAF5F0" />
+      <stop offset="100%" stop-color="#E2D4C9" />
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="150" cy="130" r="110" fill="url(#bg-grad)" />
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="225" rx="85" ry="12" fill="#5E5045" opacity="0.15" />
+  
+  <!-- Plate -->
+  <ellipse cx="150" cy="220" rx="90" ry="10" fill="#E8DEC9" />
+  <ellipse cx="150" cy="217" rx="90" ry="10" fill="#FFFFFF" />
+
+  <!-- Tier 3 (Bottom) -->
+  <path d="M 80 170 L 80 210 A 70 12 0 0 0 220 210 L 220 170 Z" fill="#FFFFFF" stroke="#EDE8F5" />
+  <ellipse cx="150" cy="170" rx="70" ry="12" fill="#FDFBF9" stroke="#EDE8F5" />
+
+  <!-- Tier 2 (Middle) -->
+  <path d="M 95 130 L 95 165 A 55 10 0 0 0 205 165 L 205 130 Z" fill="#FFFFFF" stroke="#EDE8F5" />
+  <ellipse cx="150" cy="130" rx="55" ry="10" fill="#FDFBF9" stroke="#EDE8F5" stroke-width="0.8" />
+
+  <!-- Tier 1 (Top) -->
+  <path d="M 110 90 L 110 125 A 40 8 0 0 0 190 125 L 190 90 Z" fill="#FFFFFF" stroke="#EDE8F5" stroke-width="0.8" />
+  <ellipse cx="150" cy="90" rx="40" ry="8" fill="#FDFBF9" stroke="#EDE8F5" stroke-width="0.8" />
+
+  <!-- Flower decorations on sides -->
+  <!-- Top Flower -->
+  <circle cx="150" cy="85" r="8" fill="#E07A5F" />
+  <circle cx="145" cy="80" r="6" fill="#F4E8E1" opacity="0.9" />
+  <circle cx="155" cy="80" r="6" fill="#F4E8E1" opacity="0.9" />
+  <circle cx="143" cy="87" r="6" fill="#F4E8E1" opacity="0.9" />
+  <circle cx="157" cy="87" r="6" fill="#F4E8E1" opacity="0.9" />
+
+  <!-- Middle Flower details -->
+  <circle cx="102" cy="148" r="6" fill="#E07A5F" />
+  <circle cx="200" cy="148" r="6" fill="#E07A5F" />
+
+  <!-- Bottom Lace/Ribbon effects -->
+  <path d="M 80 205 A 70 12 0 0 0 220 205" stroke="#EAD5C3" stroke-width="3" fill="none" />
+  <path d="M 95 160 A 55 10 0 0 0 205 160" stroke="#EAD5C3" stroke-width="2.5" fill="none" />
+  <path d="M 110 121 A 40 8 0 0 0 190 121" stroke="#EAD5C3" stroke-width="2" fill="none" />
+</svg>

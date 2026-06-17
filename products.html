@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakes Collection - Wake Cake</title>
+    <meta name="description" content="Browse our catalog of freshly baked wedding cakes, birthday cakes, chocolate cakes, cupcakes, and customized celebrations. Filter and order online.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍰</span>
+                <span>Wake Cake</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Cakes</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-btn" aria-label="Shopping Cart">
+                    🛒
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="hamburger" aria-label="Open Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title Header -->
+    <section class="section" style="padding: 60px 0 20px 0;">
+        <div class="container">
+            <h1 style="font-family: var(--font-heading); font-size: 44px; text-align: center; color: var(--color-primary-chocolate);">Our Cake Collections</h1>
+            <p style="text-align: center; color: var(--color-text-muted); max-width: 600px; margin: 10px auto 0 auto;">Explore our selection of premium cakes baked with love. Find the perfect match for your next sweet craving or celebration.</p>
+        </div>
+    </section>
+
+    <!-- Catalog Page Layout -->
+    <div class="container" style="padding-bottom: 100px;">
+        <div class="catalog-layout">
+            <!-- Sidebar filters -->
+            <aside class="sidebar-filters">
+                <div class="filter-section">
+                    <h3 class="filter-title">Search</h3>
+                    <div class="search-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search-products" placeholder="Search cakes..." class="search-input">
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">Categories</h3>
+                    <ul id="category-filter-list" class="category-filter-list">
+                        <!-- Loaded dynamically by cart.js -->
+                    </ul>
+                </div>
+
+                <div class="filter-section" style="border-top: 1px solid var(--color-sand-border); padding-top: 20px;">
+                    <h3 class="filter-title">Special Offers</h3>
+                    <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.4;">
+                        Use discount coupon code <strong style="color:var(--color-accent-orange);">WAKEBAKE10</strong> in the cart to get 10% off on all items!
+                    </p>
+                </div>
+            </aside>
+
+            <!-- Products catalog contents -->
+            <main>
+                <div id="catalog-products">
+                    <!-- Products cards grid populated dynamically by cart.js -->
+                </div>
+
+                <!-- Pagination controls -->
+                <div id="catalog-pagination" class="pagination">
+                    <!-- Populated dynamically by cart.js -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:white; margin-bottom: 20px;">
+                    <span class="logo-icon">🍰</span>
+                    <span>Wake Cake</span>
+                </a>
+                <p class="footer-desc">Crafting premium, mouth-watering cakes that elevate your celebrations and deliver pure happiness to your doorstep.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn">FB</a>
+                    <a href="#" class="social-btn">IG</a>
+                    <a href="#" class="social-btn">TW</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Our Cakes</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Birthday Cakes</a></li>
+                    <li><a href="products.html">Wedding Cakes</a></li>
+                    <li><a href="products.html">Cupcakes</a></li>
+                    <li><a href="products.html">Custom Cakes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Store Location</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <p>520 Patisserie Avenue, Sweetwood, NY 10022</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <p>+1 (800) 555-CAKE</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <p>hello@wakecake.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Wake Cake Bakery. All rights reserved.</p>
+            <p>Designed for Sweet Moments.</p>
+        </div>
+    </footer>
+
+    <!-- API and Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

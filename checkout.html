@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Wake Cake</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍰</span>
+                <span>Wake Cake</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Cakes</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-btn" aria-label="Shopping Cart">
+                    🛒
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="hamburger" aria-label="Open Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title Header -->
+    <section class="section" style="padding: 60px 0 20px 0;">
+        <div class="container">
+            <h1 style="font-family: var(--font-heading); font-size: 44px; color: var(--color-primary-chocolate);">Secure Checkout</h1>
+            <p style="color: var(--color-text-muted); margin-top: 10px;">Please provide your shipping details and select a payment option to complete your purchase.</p>
+        </div>
+    </section>
+
+    <!-- Checkout Main Content -->
+    <div id="checkout-page-container" class="container" style="padding-bottom: 100px;">
+        <div class="cart-layout">
+            
+            <!-- Left: Delivery Information Form -->
+            <main style="background-color: var(--color-white); border: 1px solid var(--color-sand-border); border-radius: var(--border-radius-md); padding: 40px;">
+                <form id="checkout-form">
+                    <h3 style="font-family: var(--font-heading); font-size: 22px; margin-bottom: 24px; color: var(--color-primary-chocolate);">Delivery Information</h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="c-name">Recipient's Full Name</label>
+                        <input type="text" id="c-name" required class="form-control" placeholder="Jane Doe">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label" for="c-email">Email Address</label>
+                            <input type="email" id="c-email" required class="form-control" placeholder="jane@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="c-phone">Phone Number</label>
+                            <input type="tel" id="c-phone" required class="form-control" placeholder="+1 555-0199">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 30px;">
+                        <label class="form-label" for="c-address">Shipping Delivery Address</label>
+                        <textarea id="c-address" rows="3" required class="form-control" placeholder="Street number, Apt/Suite, City, State, ZIP"></textarea>
+                    </div>
+
+                    <h3 style="font-family: var(--font-heading); font-size: 22px; margin-bottom: 20px; color: var(--color-primary-chocolate);">Payment Options</h3>
+                    
+                    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:30px;">
+                        <label style="display:flex; align-items:center; gap:10px; border:1px solid var(--color-sand-border); padding:16px; border-radius:var(--border-radius-sm); cursor:pointer;">
+                            <input type="radio" name="payment" value="Credit Card" checked>
+                            <span style="font-weight:600; font-size:14px;">Credit / Debit Card</span>
+                        </label>
+                        <label style="display:flex; align-items:center; gap:10px; border:1px solid var(--color-sand-border); padding:16px; border-radius:var(--border-radius-sm); cursor:pointer;">
+                            <input type="radio" name="payment" value="PayPal">
+                            <span style="font-weight:600; font-size:14px;">PayPal / Digital Wallets</span>
+                        </label>
+                        <label style="display:flex; align-items:center; gap:10px; border:1px solid var(--color-sand-border); padding:16px; border-radius:var(--border-radius-sm); cursor:pointer;">
+                            <input type="radio" name="payment" value="Cash on Delivery">
+                            <span style="font-weight:600; font-size:14px;">Cash on Delivery (COD)</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; height:46px;">Place Order Now</button>
+                </form>
+            </main>
+
+            <!-- Right: Itemized summary totals -->
+            <aside class="cart-summary">
+                <h3 class="summary-title">Order Items</h3>
+                
+                <div id="checkout-items-list" style="border-bottom: 1px solid var(--color-sand-border); padding-bottom: 16px; margin-bottom: 16px;">
+                    <!-- Injected dynamically by cart.js -->
+                </div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="checkout-subtotal">$0.00</span>
+                </div>
+                
+                <div class="summary-row" style="color: var(--color-success);">
+                    <span>Discount</span>
+                    <span id="checkout-discount">-$0.00</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <span id="checkout-delivery">$0.00</span>
+                </div>
+
+                <div class="summary-row total-row">
+                    <span>Total Amount</span>
+                    <span id="checkout-total">$0.00</span>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:white; margin-bottom: 20px;">
+                    <span class="logo-icon">🍰</span>
+                    <span>Wake Cake</span>
+                </a>
+                <p class="footer-desc">Crafting premium, mouth-watering cakes that elevate your celebrations and deliver pure happiness to your doorstep.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn">FB</a>
+                    <a href="#" class="social-btn">IG</a>
+                    <a href="#" class="social-btn">TW</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Our Cakes</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Birthday Cakes</a></li>
+                    <li><a href="products.html">Wedding Cakes</a></li>
+                    <li><a href="products.html">Cupcakes</a></li>
+                    <li><a href="products.html">Custom Cakes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Store Location</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <p>520 Patisserie Avenue, Sweetwood, NY 10022</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <p>+1 (800) 555-CAKE</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <p>hello@wakecake.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Wake Cake Bakery. All rights reserved.</p>
+            <p>Designed for Sweet Moments.</p>
+        </div>
+    </footer>
+
+    <!-- API and Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

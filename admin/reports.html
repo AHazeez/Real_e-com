@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Reports - Wake Cake Admin</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+
+    <!-- Mobile Header -->
+    <div class="admin-mobile-header">
+        <div style="font-weight:700; font-size:18px;">🍰 Wake Cake Admin</div>
+        <button class="admin-hamburger" aria-label="Toggle Sidebar">☰</button>
+    </div>
+
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <span>🍰</span>
+                <span>Wake Cake <span class="brand-orange">Admin</span></span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><span>📊</span> Dashboard</a></li>
+                <li class="sidebar-item"><a href="products.html" class="sidebar-link"><span>🎂</span> Products</a></li>
+                <li class="sidebar-item"><a href="orders.html" class="sidebar-link"><span>🛒</span> Orders</a></li>
+                <li class="sidebar-item"><a href="inventory.html" class="sidebar-link"><span>📦</span> Inventory</a></li>
+                <li class="sidebar-item"><a href="customers.html" class="sidebar-link"><span>👥</span> Customers</a></li>
+                <li class="sidebar-item"><a href="reports.html" class="sidebar-link active"><span>📈</span> Reports</a></li>
+                <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><span>⚙️</span> Settings</a></li>
+            </ul>
+            <div style="padding: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
+                <a href="#" id="admin-logout-btn" class="sidebar-link" style="padding:0; color:#E07A5F;"><span>🚪</span> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-title">
+                    <h1>Sales Reports &amp; Analytics</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle-btn" class="theme-toggle">🌙</button>
+                </div>
+            </header>
+
+            <!-- Report stats metrics -->
+            <section class="summary-cards" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <h3>Gross Revenue</h3>
+                        <div id="rep-sales-total" class="metric-value">$0.00</div>
+                    </div>
+                    <div class="metric-icon icon-revenue">💵</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <h3>Transactions Count</h3>
+                        <div id="rep-orders-count" class="metric-value">0</div>
+                    </div>
+                    <div class="metric-icon icon-orders">🛒</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <h3>Average Order Ticket</h3>
+                        <div id="rep-avg-ticket" class="metric-value">$0.00</div>
+                    </div>
+                    <div class="metric-icon icon-products">🎫</div>
+                </div>
+            </section>
+
+            <!-- Splits: Left Chart, Right Top Products -->
+            <div class="dashboard-grid">
+                
+                <!-- Chart Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Weekly Sales Performance Chart</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Custom CSS Bar chart injected by admin.js -->
+                        <div id="reports-sales-chart" class="chart-container">
+                            <!-- Populated dynamically by admin.js -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Selling Products Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Top Selling Products</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="data-table" style="font-size:13px;">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Product Name</th>
+                                        <th>Sold Qty</th>
+                                        <th>Total Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reports-top-products">
+                                    <!-- Populated dynamically by admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Database and Admin scripts -->
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>

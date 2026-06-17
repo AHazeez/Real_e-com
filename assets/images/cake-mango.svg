@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FAF5F0" />
+      <stop offset="100%" stop-color="#FFF2D4" />
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="150" cy="130" r="110" fill="url(#bg-grad)" />
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="205" rx="90" ry="15" fill="#42351F" opacity="0.15" />
+  
+  <!-- Stand -->
+  <path d="M 100 200 L 200 200 L 170 220 L 130 220 Z" fill="#EADFCE" />
+  <ellipse cx="150" cy="200" rx="95" ry="10" fill="#FFFFFF" />
+
+  <!-- Cake Base Body (Yellow mango sponge) -->
+  <path d="M 70 140 L 70 185 A 80 15 0 0 0 230 185 L 230 140 Z" fill="#FFC857" />
+  
+  <!-- White frosting border bottom -->
+  <path d="M 70 183 A 80 15 0 0 0 230 183 L 230 187 A 80 15 0 0 1 70 187 Z" fill="#FFFFFF" />
+
+  <!-- Top Mousse Glaze -->
+  <ellipse cx="150" cy="140" rx="80" ry="15" fill="#FFB703" />
+
+  <!-- Mango Slices on Top (layered arcs) -->
+  <path d="M 110 135 Q 130 125 150 138" stroke="#E5989B" stroke-width="4" fill="none" opacity="0.9" />
+  <path d="M 130 130 Q 150 120 170 133" stroke="#FFB703" stroke-width="5" fill="none" />
+  <path d="M 150 132 Q 170 122 190 135" stroke="#FFD166" stroke-width="4" fill="none" />
+
+  <!-- Orange Zests / Raspberries as accents -->
+  <circle cx="100" cy="138" r="4" fill="#D00000" />
+  <circle cx="125" cy="142" r="4" fill="#D00000" />
+  <circle cx="160" cy="143" r="4" fill="#D00000" />
+  <circle cx="200" cy="138" r="4" fill="#D00000" />
+  
+  <!-- Mint Leaf -->
+  <path d="M 148 126 Q 140 115 150 110 Q 156 117 148 126" fill="#4E8A64" />
+</svg>

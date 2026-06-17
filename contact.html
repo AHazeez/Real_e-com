@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Wake Cake</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍰</span>
+                <span>Wake Cake</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Cakes</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-btn" aria-label="Shopping Cart">
+                    🛒
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="hamburger" aria-label="Open Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title Header -->
+    <section class="section" style="padding: 60px 0 20px 0;">
+        <div class="container">
+            <h1 style="font-family: var(--font-heading); font-size: 44px; text-align: center; color: var(--color-primary-chocolate);">Contact Our Bakery</h1>
+            <p style="text-align: center; color: var(--color-text-muted); max-width: 600px; margin: 10px auto 0 auto;">Have a question about order delivery, ingredients, or want to place a custom cake design query? Send us a message.</p>
+        </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <div class="container" style="padding-bottom: 100px;">
+        <div class="details-grid" style="grid-template-columns: 0.9fr 1.1fr; gap:60px;">
+            
+            <!-- Left: Contact Details -->
+            <div>
+                <h3 style="font-family:var(--font-heading); font-size:24px; color:var(--color-primary-chocolate); margin-bottom:20px;">Bakery Headquarters</h3>
+                
+                <div style="display:flex; flex-direction:column; gap:24px; margin-bottom:40px;">
+                    <div style="display:flex; gap:16px;">
+                        <span style="font-size:24px;">📍</span>
+                        <div>
+                            <strong style="display:block; font-size:16px;">Address</strong>
+                            <p style="color:var(--color-text-muted); font-size:14px; margin-top:4px;">520 Patisserie Avenue, Sweetwood, NY 10022</p>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:16px;">
+                        <span style="font-size:24px;">📞</span>
+                        <div>
+                            <strong style="display:block; font-size:16px;">Phone Number</strong>
+                            <p style="color:var(--color-text-muted); font-size:14px; margin-top:4px;">+1 (800) 555-CAKE (Main Store Line)</p>
+                            <p style="color:var(--color-text-muted); font-size:14px;">+1 (555) 0188 (Support Desk)</p>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:16px;">
+                        <span style="font-size:24px;">✉️</span>
+                        <div>
+                            <strong style="display:block; font-size:16px;">Email Queries</strong>
+                            <p style="color:var(--color-text-muted); font-size:14px; margin-top:4px;">hello@wakecake.com (General)</p>
+                            <p style="color:var(--color-text-muted); font-size:14px;">orders@wakecake.com (Tracking)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="font-family:var(--font-heading); font-size:20px; color:var(--color-primary-chocolate); margin-bottom:12px;">Opening Hours</h3>
+                <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:14px; color:var(--color-text-muted);">
+                    <li style="display:flex; justify-content:space-between;"><span>Monday - Friday:</span> <strong>8:00 AM - 8:00 PM</strong></li>
+                    <li style="display:flex; justify-content:space-between;"><span>Saturday:</span> <strong>9:00 AM - 9:00 PM</strong></li>
+                    <li style="display:flex; justify-content:space-between;"><span>Sunday:</span> <strong>10:00 AM - 6:00 PM</strong></li>
+                </ul>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div style="background-color: var(--color-white); border: 1px solid var(--color-sand-border); border-radius: var(--border-radius-md); padding: 40px; box-shadow: var(--shadow-sm);">
+                <form id="contact-us-form" onsubmit="event.preventDefault(); window.showToast('Message sent! Our master baker will contact you shortly.', 'success'); this.reset();">
+                    <h3 style="font-family:var(--font-heading); font-size:22px; margin-bottom:20px; color:var(--color-primary-chocolate);">Send Us a Message</h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="con-name">Your Full Name</label>
+                        <input type="text" id="con-name" required class="form-control" placeholder="John Doe">
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                        <div class="form-group">
+                            <label class="form-label" for="con-email">Email Address</label>
+                            <input type="email" id="con-email" required class="form-control" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="con-phone">Phone Number</label>
+                            <input type="tel" id="con-phone" class="form-control" placeholder="+1 555-0199">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:24px;">
+                        <label class="form-label" for="con-msg">Message details</label>
+                        <textarea id="con-msg" rows="4" required class="form-control" placeholder="How can our bakery help you today?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width:100%; height:46px;">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Styled Google Maps Section Placeholder -->
+        <div class="map-placeholder">
+            <span class="map-icon">🗺️</span>
+            <h3 style="font-family:var(--font-heading); font-size:22px; color:var(--color-primary-chocolate);">Wake Cake Bakery Map</h3>
+            <p>520 Patisserie Avenue, Sweetwood, NY 10022</p>
+            <div style="border: 1px dashed var(--color-accent-orange); padding:10px 20px; border-radius:4px; font-size:12px; font-weight:600; color:var(--color-accent-orange);">
+                Google Maps Embed Window Placeholder (Staging Active)
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:white; margin-bottom: 20px;">
+                    <span class="logo-icon">🍰</span>
+                    <span>Wake Cake</span>
+                </a>
+                <p class="footer-desc">Crafting premium, mouth-watering cakes that elevate your celebrations and deliver pure happiness to your doorstep.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn">FB</a>
+                    <a href="#" class="social-btn">IG</a>
+                    <a href="#" class="social-btn">TW</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Our Cakes</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Birthday Cakes</a></li>
+                    <li><a href="products.html">Wedding Cakes</a></li>
+                    <li><a href="products.html">Cupcakes</a></li>
+                    <li><a href="products.html">Custom Cakes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Store Location</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <p>520 Patisserie Avenue, Sweetwood, NY 10022</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <p>+1 (800) 555-CAKE</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <p>hello@wakecake.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Wake Cake Bakery. All rights reserved.</p>
+            <p>Designed for Sweet Moments.</p>
+        </div>
+    </footer>
+
+    <!-- API and Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

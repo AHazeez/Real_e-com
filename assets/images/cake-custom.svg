@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FAF5F0" />
+      <stop offset="100%" stop-color="#E8E8E8" />
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="150" cy="130" r="110" fill="url(#bg-grad)" />
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="205" rx="90" ry="15" fill="#3A3D40" opacity="0.15" />
+  
+  <!-- Plate -->
+  <ellipse cx="150" cy="200" rx="95" ry="10" fill="#D2D7DF" />
+  <ellipse cx="150" cy="197" rx="95" ry="10" fill="#FFFFFF" />
+
+  <!-- Cake Base Body (Creamy light blue custom look) -->
+  <path d="M 70 130 L 70 185 A 80 15 0 0 0 230 185 L 230 130 Z" fill="#A8DADC" />
+  
+  <!-- Frosting swirls around base -->
+  <path d="M 70 185 A 80 15 0 0 0 230 185" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-dasharray="8,6" />
+
+  <!-- Cake Top surface -->
+  <ellipse cx="150" cy="130" rx="80" ry="15" fill="#F1FAEE" />
+
+  <!-- Birthday Confetti sprinkles -->
+  <circle cx="95" cy="132" r="3" fill="#E63946" />
+  <rect x="115" y="128" width="6" height="2" fill="#457B9D" transform="rotate(30 115 128)" />
+  <circle cx="135" cy="134" r="2.5" fill="#E9C46A" />
+  <rect x="165" y="126" width="6" height="2" fill="#E63946" transform="rotate(-45 165 126)" />
+  <circle cx="180" cy="132" r="3" fill="#A8DADC" />
+  <circle cx="200" cy="130" r="2.5" fill="#457B9D" />
+
+  <!-- Lit Candle in Center -->
+  <!-- Stand -->
+  <rect x="147" y="100" width="6" height="25" fill="#E9C46A" rx="1" />
+  <!-- Stripe on candle -->
+  <path d="M 147 105 L 153 108 M 147 115 L 153 118" stroke="#457B9D" stroke-width="1.5" />
+  <!-- Wick -->
+  <line x1="150" y1="100" x2="150" y2="95" stroke="#3D2B1F" stroke-width="1.5" />
+  <!-- Flame -->
+  <path d="M 150 95 C 145 90 146 80 150 72 C 154 80 155 90 150 95 Z" fill="#E07A5F" />
+  <!-- Flame Core -->
+  <path d="M 150 93 C 148 90 148 84 150 80 C 152 84 152 90 150 93 Z" fill="#F4A261" />
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#FAF5F0" />
+      <stop offset="100%" stop-color="#EBE3D5" />
+    </radialGradient>
+    <linearGradient id="cake-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C3A21" />
+      <stop offset="50%" stop-color="#4A2C11" />
+      <stop offset="100%" stop-color="#2D1500" />
+    </linearGradient>
+    <linearGradient id="frosting-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#805A3B" />
+      <stop offset="100%" stop-color="#5C3A21" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="150" cy="130" r="110" fill="url(#bg-grad)" />
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="205" rx="90" ry="15" fill="#3D2B1F" opacity="0.15" />
+  
+  <!-- Stand -->
+  <path d="M 100 200 L 200 200 L 170 220 L 130 220 Z" fill="#D3C5B5" />
+  <ellipse cx="150" cy="200" rx="95" ry="10" fill="#E5DCD0" />
+  <ellipse cx="150" cy="197" rx="95" ry="10" fill="#F4EFEA" />
+
+  <!-- Cake Base Body -->
+  <path d="M 70 140 L 70 185 A 80 15 0 0 0 230 185 L 230 140 Z" fill="url(#cake-grad)" />
+  <ellipse cx="150" cy="140" rx="80" ry="15" fill="url(#frosting-grad)" />
+
+  <!-- Frosting Layers (drips) -->
+  <path d="M 70 140 
+           C 70 150, 85 152, 90 143 
+           C 95 135, 105 155, 115 153 
+           C 125 150, 130 142, 140 145 
+           C 150 148, 160 160, 170 147 
+           C 180 135, 190 156, 200 151
+           C 210 145, 220 149, 230 140
+           L 230 140 L 230 145
+           A 80 15 0 0 1 70 145 Z" fill="#361A07" />
+
+  <!-- Whipped Cream Swirls on Top -->
+  <circle cx="95" cy="135" r="8" fill="#FFFFFF" opacity="0.9" />
+  <circle cx="120" cy="130" r="8" fill="#FFFFFF" opacity="0.9" />
+  <circle cx="150" cy="128" r="8" fill="#FFFFFF" opacity="0.9" />
+  <circle cx="180" cy="130" r="8" fill="#FFFFFF" opacity="0.9" />
+  <circle cx="205" cy="135" r="8" fill="#FFFFFF" opacity="0.9" />
+
+  <!-- Chocolate Curls/Strawberries on Cream -->
+  <circle cx="95" cy="131" r="5" fill="#E07A5F" />
+  <circle cx="120" cy="126" r="5" fill="#E07A5F" />
+  <circle cx="150" cy="124" r="5" fill="#E07A5F" />
+  <circle cx="180" cy="126" r="5" fill="#E07A5F" />
+  <circle cx="205" cy="131" r="5" fill="#E07A5F" />
+
+  <!-- Cherry on Top of Center Swirl -->
+  <path d="M 150 124 Q 155 105 165 108" stroke="#3D2B1F" stroke-width="2" fill="none" />
+</svg>

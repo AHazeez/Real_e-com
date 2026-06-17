@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#FAF5F0" />
+      <stop offset="100%" stop-color="#FCE1E4" />
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="150" cy="130" r="110" fill="url(#bg-grad)" />
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="205" rx="90" ry="15" fill="#473A3E" opacity="0.15" />
+  
+  <!-- Stand -->
+  <path d="M 100 200 L 200 200 L 170 220 L 130 220 Z" fill="#EADCD8" />
+  <ellipse cx="150" cy="200" rx="95" ry="10" fill="#F4EAE6" />
+
+  <!-- Cake Base Body -->
+  <path d="M 70 140 L 70 185 A 80 15 0 0 0 230 185 L 230 140 Z" fill="#FFE5D9" />
+  <!-- Strawberries layered inside -->
+  <path d="M 70 160 A 80 15 0 0 0 230 160 L 230 165 A 80 15 0 0 1 70 165 Z" fill="#F26419" />
+  
+  <ellipse cx="150" cy="140" rx="80" ry="15" fill="#FFF2EE" />
+
+  <!-- Whipped Cream Frosting Top Drips -->
+  <path d="M 70 140 
+           C 70 148, 85 149, 90 142 
+           C 95 135, 105 146, 115 144 
+           C 125 142, 130 138, 140 140 
+           C 150 142, 160 150, 170 141 
+           C 180 132, 190 147, 200 143
+           C 210 139, 220 143, 230 140
+           L 230 140 L 230 143
+           A 80 15 0 0 1 70 143 Z" fill="#FFFFFF" />
+
+  <!-- Strawberries and Cream Swirls on Top -->
+  <!-- Swirls -->
+  <path d="M 90 126 C 90 120 100 120 100 126 Z" fill="#FFFFFF" />
+  <path d="M 120 122 C 120 116 130 116 130 122 Z" fill="#FFFFFF" />
+  <path d="M 150 120 C 150 114 160 114 160 120 Z" fill="#FFFFFF" />
+  <path d="M 180 122 C 180 116 190 116 190 122 Z" fill="#FFFFFF" />
+  <path d="M 200 126 C 200 120 210 120 210 126 Z" fill="#FFFFFF" />
+
+  <!-- Strawberries -->
+  <!-- Triangle shapes for strawberries -->
+  <path d="M 95 125 L 90 135 L 100 135 Z" fill="#E63946" />
+  <path d="M 125 121 L 120 131 L 130 131 Z" fill="#E63946" />
+  <path d="M 155 119 L 150 129 L 160 129 Z" fill="#E63946" />
+  <path d="M 185 121 L 180 131 L 190 131 Z" fill="#E63946" />
+  <path d="M 205 125 L 200 135 L 210 135 Z" fill="#E63946" />
+
+  <!-- Center Strawberry -->
+  <path d="M 150 120 L 142 105 L 158 105 Z" fill="#D90429" />
+  <!-- Mint Leaf -->
+  <path d="M 154 105 Q 164 100 158 95 Q 150 100 154 105" fill="#4E8A64" />
+</svg>
