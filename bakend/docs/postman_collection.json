@@ -1,0 +1,216 @@
+{
+  "info": {
+    "name": "Wake Cake Backend API",
+    "_postman_id": "9ccf1d2a-a408-4909-bc36-wakecake0001",
+    "description": "Postman collection for Wake Cake bakery e-commerce backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "{{API_BASE_URL}}"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Wake Cake Customer\",\n  \"email\": \"customer@example.com\",\n  \"password\": \"password123\",\n  \"phone\": \"9999999999\"\n}"
+            },
+            "url": "{{baseUrl}}/auth/register"
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"customer@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": "{{baseUrl}}/auth/login"
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/logout"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Add Product",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "name", "value": "Chocolate Truffle Cake", "type": "text" },
+                { "key": "description", "value": "Rich chocolate cake", "type": "text" },
+                { "key": "price", "value": "799", "type": "text" },
+                { "key": "category", "value": "Cakes", "type": "text" },
+                { "key": "stock_quantity", "value": "20", "type": "text" },
+                { "key": "reorder_level", "value": "5", "type": "text" },
+                { "key": "status", "value": "active", "type": "text" },
+                { "key": "image", "type": "file", "src": "" }
+              ]
+            },
+            "url": "{{baseUrl}}/products"
+          }
+        },
+        { "name": "Get Products", "request": { "method": "GET", "url": "{{baseUrl}}/products" } },
+        { "name": "Get Product Details", "request": { "method": "GET", "url": "{{baseUrl}}/products/1" } },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "body": { "mode": "formdata", "formdata": [{ "key": "price", "value": "849", "type": "text" }] },
+            "url": "{{baseUrl}}/products/1"
+          }
+        },
+        { "name": "Delete Product", "request": { "method": "DELETE", "url": "{{baseUrl}}/products/1" } }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Add Category",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"category_name\": \"Cakes\"\n}" },
+            "url": "{{baseUrl}}/categories"
+          }
+        },
+        { "name": "Get Categories", "request": { "method": "GET", "url": "{{baseUrl}}/categories" } },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"category_name\": \"Premium Cakes\"\n}" },
+            "url": "{{baseUrl}}/categories/1"
+          }
+        },
+        { "name": "Delete Category", "request": { "method": "DELETE", "url": "{{baseUrl}}/categories/1" } }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        { "name": "Profile", "request": { "method": "GET", "url": "{{baseUrl}}/customers/profile" } },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"city\": \"Mumbai\",\n  \"state\": \"Maharashtra\",\n  \"postal_code\": \"400001\"\n}" },
+            "url": "{{baseUrl}}/customers/profile"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Add To Cart",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"product_id\": 1,\n  \"quantity\": 2\n}" },
+            "url": "{{baseUrl}}/cart"
+          }
+        },
+        { "name": "View Cart", "request": { "method": "GET", "url": "{{baseUrl}}/cart" } },
+        {
+          "name": "Update Quantity",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"quantity\": 3\n}" },
+            "url": "{{baseUrl}}/cart/1"
+          }
+        },
+        { "name": "Remove Item", "request": { "method": "DELETE", "url": "{{baseUrl}}/cart/1" } }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Place Order",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"delivery_address\": \"123 Wake Cake Street\",\n  \"payment_method\": \"COD\"\n}" },
+            "url": "{{baseUrl}}/orders"
+          }
+        },
+        { "name": "View Orders", "request": { "method": "GET", "url": "{{baseUrl}}/orders" } },
+        { "name": "View Order", "request": { "method": "GET", "url": "{{baseUrl}}/orders/1" } },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"status\": \"Baking\"\n}" },
+            "url": "{{baseUrl}}/orders/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        { "name": "Track Stock", "request": { "method": "GET", "url": "{{baseUrl}}/inventory" } },
+        {
+          "name": "Update Stock",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"stock_quantity\": 25,\n  \"reorder_level\": 5\n}" },
+            "url": "{{baseUrl}}/inventory/1"
+          }
+        }
+      ]
+    },
+    { "name": "Admin Dashboard", "item": [{ "name": "Metrics", "request": { "method": "GET", "url": "{{baseUrl}}/admin/dashboard" } }] },
+    {
+      "name": "Reports",
+      "item": [
+        { "name": "Daily Sales", "request": { "method": "GET", "url": "{{baseUrl}}/reports/daily" } },
+        { "name": "Weekly Sales", "request": { "method": "GET", "url": "{{baseUrl}}/reports/weekly" } },
+        { "name": "Monthly Sales", "request": { "method": "GET", "url": "{{baseUrl}}/reports/monthly" } }
+      ]
+    }
+  ]
+}

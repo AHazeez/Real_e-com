@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Directory - Wake Cake Admin</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+
+    <!-- Mobile Header -->
+    <div class="admin-mobile-header">
+        <div style="font-weight:700; font-size:18px;">🍰 Wake Cake Admin</div>
+        <button class="admin-hamburger" aria-label="Toggle Sidebar">☰</button>
+    </div>
+
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <span>🍰</span>
+                <span>Wake Cake <span class="brand-orange">Admin</span></span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><span>📊</span> Dashboard</a></li>
+                <li class="sidebar-item"><a href="products.html" class="sidebar-link"><span>🎂</span> Products</a></li>
+                <li class="sidebar-item"><a href="orders.html" class="sidebar-link"><span>🛒</span> Orders</a></li>
+                <li class="sidebar-item"><a href="inventory.html" class="sidebar-link"><span>📦</span> Inventory</a></li>
+                <li class="sidebar-item"><a href="customers.html" class="sidebar-link active"><span>👥</span> Customers</a></li>
+                <li class="sidebar-item"><a href="reports.html" class="sidebar-link"><span>📈</span> Reports</a></li>
+                <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><span>⚙️</span> Settings</a></li>
+            </ul>
+            <div style="padding: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
+                <a href="#" id="admin-logout-btn" class="sidebar-link" style="padding:0; color:#E07A5F;"><span>🚪</span> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-title">
+                    <h1>Customer Directory</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle-btn" class="theme-toggle">🌙</button>
+                </div>
+            </header>
+
+            <!-- Customer list table card -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Registered Customer Base</h2>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Customer Name</th>
+                                    <th>Email Address</th>
+                                    <th>Phone Number</th>
+                                    <th>Orders Placed</th>
+                                    <th>Total Spending</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-customers-table-body">
+                                <!-- Loaded dynamically by admin.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Customer Details & Purchase Logs Modal Backdrop -->
+    <div id="modal-customer" class="modal-backdrop">
+        <div class="modal" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3 class="modal-title">Customer Purchase History</h3>
+                <button class="modal-close" onclick="closeModal('modal-customer')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="order-details-grid" style="border-bottom: 1px solid var(--admin-card-border); padding-bottom: 15px; margin-bottom: 20px;">
+                    <div class="order-detail-block">
+                        <h4>Full Name</h4>
+                        <p><strong id="cust-modal-name">Alice Smith</strong></p>
+                        <p id="cust-modal-email">alice@example.com</p>
+                    </div>
+                    <div class="order-detail-block">
+                        <h4>Contact info</h4>
+                        <p id="cust-modal-phone">+1 555-0199</p>
+                        <p id="cust-modal-address" style="font-size:13px; color:var(--admin-text-muted);">123 Main St, Springfield</p>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 14px; color: var(--admin-text-muted); text-transform: uppercase; font-weight: 600; margin-bottom: 10px;">Placed Orders Log</h4>
+                
+                <div class="table-responsive">
+                    <table class="data-table" style="font-size: 13px;">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Order Date</th>
+                                <th>Order Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cust-modal-orders">
+                            <!-- Injected dynamically by admin.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-close-customer-modal" class="btn-admin btn-admin-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Database and Admin scripts -->
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>

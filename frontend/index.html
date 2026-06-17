@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wake Cake - Premium Bakery Storefront</title>
+    <meta name="description" content="Welcome to Wake Cake, a premium bakery bringing you freshly baked happiness daily. Discover birthday cakes, wedding cakes, cupcakes, and custom creations.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍰</span>
+                <span>Wake Cake</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Cakes</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-btn" aria-label="Shopping Cart">
+                    🛒
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="hamburger" aria-label="Open Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-subtitle">Premium Artisanal Bakery</span>
+                <h1 class="hero-title">Freshly Baked Happiness Delivered Daily</h1>
+                <p class="hero-description">
+                    Indulge in our exquisite selection of gourmet cakes and pastries, handcrafted with organic local ingredients and baked with passion by master patissiers.
+                </p>
+                <div class="hero-actions">
+                    <a href="products.html" class="btn btn-primary">Order Now</a>
+                    <a href="about.html" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-blob"></div>
+                <img src="assets/images/cake-chocolate.svg" alt="Delicious Chocolate Fudge Cake" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section section-bg-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Promise</span>
+                <h2 class="section-title">Why Choose Wake Cake</h2>
+                <p class="section-description">Every order is crafted with utmost care, using refined recipes optimized for maximum flavor and visual perfection.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Organic Ingredients</h3>
+                    <p>We source only high-quality organic vanilla beans, fresh seasonal berries, and premium Belgian cocoa for a natural flavor.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">👩‍🍳</div>
+                    <h3>Expert Bakers</h3>
+                    <p>Our pastry chefs bring years of award-winning experience to sculpt cakes that look as breathtaking as they taste.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Safe Delivery</h3>
+                    <p>We ship in refrigerated containers directly to your doorstep. Guaranteed fresh, pristine, and prompt delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Fresh from the Oven</span>
+                <h2 class="section-title">Featured Creations</h2>
+                <p class="section-description">Take a look at our freshly baked signature cakes. Perfect for celebrations, small gatherings, or personal treats.</p>
+            </div>
+            <div id="featured-grid" class="products-grid">
+                <!-- Injected dynamically by cart.js -->
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="products.html" class="btn btn-secondary">Explore All Cakes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestsellers Section -->
+    <section class="section section-bg-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Highly Recommended</span>
+                <h2 class="section-title">Our Best Sellers</h2>
+                <p class="section-description">These are the popular favorites that keep our customers smiling and ordering week after week.</p>
+            </div>
+            <div id="bestseller-grid" class="products-grid">
+                <!-- Injected dynamically by cart.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Sweet Feedback</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-description">Read genuine reviews from cake enthusiasts who have experienced the magic of Wake Cake.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The Belgian Chocolate Fudge Cake was a showstopper at my daughter's birthday! Incredibly rich, moist, and decorated beautifully."</p>
+                    <div class="testimonial-user">
+                        <div class="testimonial-avatar">A</div>
+                        <div>
+                            <h4 class="testimonial-name">Amanda Ross</h4>
+                            <span class="testimonial-role">Verified Client</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Ordering was extremely easy. The strawberry shortcake arrived right on time and tasted heavenly. Highly recommend their delivery!"</p>
+                    <div class="testimonial-user">
+                        <div class="testimonial-avatar">D</div>
+                        <div>
+                            <h4 class="testimonial-name">David Vance</h4>
+                            <span class="testimonial-role">Verified Client</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"They designed a custom three-tiered wedding cake for us that exceeded all expectations. Tasted amazing, and guests couldn't stop praising it."</p>
+                    <div class="testimonial-user">
+                        <div class="testimonial-avatar">K</div>
+                        <div>
+                            <h4 class="testimonial-name">Katherine Mills</h4>
+                            <span class="testimonial-role">Wedding Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="cta-container container">
+            <h2 class="cta-title">Celebrate with Sweetness</h2>
+            <p class="cta-desc">Need a custom cake for a special birthday, wedding, or event? Connect with our baking experts or browse our online store now.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="products.html" class="btn btn-primary">Shop Online</a>
+                <a href="contact.html" class="btn btn-secondary" style="border-color:white; color:white;">Request Custom Design</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color:white; margin-bottom: 20px;">
+                    <span class="logo-icon">🍰</span>
+                    <span>Wake Cake</span>
+                </a>
+                <p class="footer-desc">Crafting premium, mouth-watering cakes that elevate your celebrations and deliver pure happiness to your doorstep.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+                    <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-btn" aria-label="Twitter">TW</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Our Cakes</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html">Birthday Cakes</a></li>
+                    <li><a href="products.html">Wedding Cakes</a></li>
+                    <li><a href="products.html">Cupcakes</a></li>
+                    <li><a href="products.html">Custom Cakes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Store Location</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <p>520 Patisserie Avenue, Sweetwood, NY 10022</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <p>+1 (800) 555-CAKE</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <p>hello@wakecake.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Wake Cake Bakery. All rights reserved.</p>
+            <p>Designed for Sweet Moments.</p>
+        </div>
+    </footer>
+
+    <!-- API and Main scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

@@ -1,34 +1,33 @@
 const pool = require('../config/db');
 const asyncHandler = require('../utils/asyncHandler');
 
-const getDashboard = asyncHandler(async (req, res) => {
-  const [[products]] = await pool.execute('SELECT COUNT(*) AS total_products FROM products');
-  const [[orders]] = await pool.execute('SELECT COUNT(*) AS total_orders FROM orders');
-  const [[customers]] = await pool.execute(
-    `SELECT COUNT(*) AS total_customers
-     FROM users u
-     INNER JOIN roles r ON r.id = u.role_id
-     WHERE r.name = 'Customer'`
-  );
-  const [[revenue]] = await pool.execute(
-    "SELECT COALESCE(SUM(total_amount), 0) AS total_revenue FROM orders WHERE status != 'Cancelled'"
-  );
-  const [[lowStock]] = await pool.execute(
-    'SELECT COUNT(*) AS low_stock_count FROM inventory WHERE stock_quantity <= reorder_level'
-  );
+const getDashboardStats = asyncHandler(async (req, res) => {
+    const connection = await pool.getConnection();
+    try {
+        const [productsResult] = await connection.execute(
+            `SELECT COUNT(p.id) as totalProducts,
+                    SUM(CASE WHEN i.stock_quantity <= i.reorder_level THEN 1 ELSE 0 END) as lowStockCount
+             FROM products p
+             LEFT JOIN inventory i ON i.product_id = p.id`
+        );
+        const [ordersResult] = await connection.execute('SELECT COUNT(*) as totalOrders, SUM(total_amount) as totalRevenue FROM orders');
+        const [customersResult] = await connection.execute('SELECT COUNT(*) as totalCustomers FROM customers');
 
-  res.json({
-    success: true,
-    data: {
-      total_products: products.total_products,
-      total_orders: orders.total_orders,
-      total_customers: customers.total_customers,
-      total_revenue: revenue.total_revenue,
-      low_stock_count: lowStock.low_stock_count
+        res.json({
+            success: true,
+            data: {
+                totalProducts: productsResult[0].totalProducts || 0,
+                lowStockCount: productsResult[0].lowStockCount || 0,
+                totalOrders: ordersResult[0].totalOrders || 0,
+                totalRevenue: parseFloat(ordersResult[0].totalRevenue) || 0,
+                totalCustomers: customersResult[0].totalCustomers || 0,
+            }
+        });
+    } finally {
+        connection.release();
     }
-  });
 });
 
 module.exports = {
-  getDashboard
+    getDashboardStats
 };

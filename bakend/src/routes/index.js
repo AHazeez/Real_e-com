@@ -9,5 +9,6 @@ router.use('/orders', require('./order.routes'));
 router.use('/inventory', require('./inventory.routes'));
 router.use('/admin', require('./admin.routes'));
 router.use('/reports', require('./report.routes'));
+router.use('/settings', require('./settings.routes'));
 
 module.exports = router;

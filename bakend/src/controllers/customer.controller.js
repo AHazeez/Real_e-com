@@ -1,6 +1,28 @@
 const pool = require('../config/db');
 const asyncHandler = require('../utils/asyncHandler');
 
+const getCustomers = asyncHandler(async (req, res) => {
+  const [rows] = await pool.execute(
+    `SELECT c.id,
+            u.id AS user_id,
+            u.name,
+            u.email,
+            u.phone,
+            CONCAT_WS(', ', c.address_line1, c.address_line2, c.city, c.state, c.postal_code, c.country) AS address,
+            c.created_at AS join_date,
+            COUNT(o.id) AS order_count,
+            COALESCE(SUM(CASE WHEN o.status != 'Cancelled' THEN o.total_amount ELSE 0 END), 0) AS total_spent,
+            MAX(o.created_at) AS last_order_date
+     FROM customers c
+     INNER JOIN users u ON u.id = c.user_id
+     LEFT JOIN orders o ON o.user_id = u.id
+     GROUP BY c.id, u.id, u.name, u.email, u.phone, c.address_line1, c.address_line2, c.city, c.state, c.postal_code, c.country, c.created_at
+     ORDER BY c.created_at DESC`
+  );
+
+  res.json({ success: true, data: rows });
+});
+
 const getProfile = asyncHandler(async (req, res) => {
   const [profile] = await pool.execute(
     `SELECT u.id, u.name, u.email, u.phone, c.address_line1, c.address_line2, c.city, c.state, c.postal_code, c.country
@@ -50,6 +72,7 @@ const updateProfile = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
+  getCustomers,
   getProfile,
   updateProfile
 };

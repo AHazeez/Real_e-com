@@ -95,7 +95,12 @@ const getOrders = asyncHandler(async (req, res) => {
 const getOrderById = asyncHandler(async (req, res) => {
   const isAdmin = req.user.role === 'Admin';
   const [orders] = await pool.execute(
-    `SELECT * FROM orders WHERE id = ? ${isAdmin ? '' : 'AND user_id = ?'}`,
+    `SELECT o.*, u.name AS customer_name, u.email AS customer_email, u.phone AS customer_phone,
+            p.payment_method, p.status AS payment_status
+     FROM orders o
+     INNER JOIN users u ON u.id = o.user_id
+     LEFT JOIN payments p ON p.order_id = o.id
+     WHERE o.id = ? ${isAdmin ? '' : 'AND o.user_id = ?'}`,
     isAdmin ? [req.params.id] : [req.params.id, req.user.id]
   );
   if (!orders.length) throw new AppError('Order not found', 404);

@@ -5,7 +5,7 @@ const AppError = require('../utils/AppError');
 
 const imageUrlFromRequest = (req) => {
   if (!req.file) return undefined;
-  return `${env.apiBaseUrl}/uploads/products/${req.file.filename}`;
+  return `${env.uploadsBaseUrl}/products/${req.file.filename}`;
 };
 
 const addProduct = asyncHandler(async (req, res) => {
@@ -45,11 +45,28 @@ const addProduct = asyncHandler(async (req, res) => {
 });
 
 const getProducts = asyncHandler(async (req, res) => {
+  const conditions = [];
+  const params = [];
+
+  if (req.query.status) {
+    conditions.push('p.status = ?');
+    params.push(req.query.status);
+  }
+
+  if (req.query.low_stock === 'true') {
+    conditions.push('i.stock_quantity <= i.reorder_level');
+  }
+
+  const limit = Number(req.query.limit);
+  const limitSql = Number.isInteger(limit) && limit > 0 ? ` LIMIT ${Math.min(limit, 100)}` : '';
+
   const [rows] = await pool.execute(
     `SELECT p.*, i.reorder_level
      FROM products p
      LEFT JOIN inventory i ON i.product_id = p.id
-     ORDER BY p.created_at DESC`
+     ${conditions.length ? `WHERE ${conditions.join(' AND ')}` : ''}
+     ORDER BY p.created_at DESC${limitSql}`,
+    params
   );
   res.json({ success: true, data: rows });
 });
@@ -111,9 +128,9 @@ const updateProduct = asyncHandler(async (req, res) => {
 });
 
 const deleteProduct = asyncHandler(async (req, res) => {
-  const [result] = await pool.execute('DELETE FROM products WHERE id = ?', [req.params.id]);
+  const [result] = await pool.execute('UPDATE products SET status = ? WHERE id = ?', ['inactive', req.params.id]);
   if (!result.affectedRows) throw new AppError('Product not found', 404);
-  res.json({ success: true, message: 'Product deleted' });
+  res.json({ success: true, message: 'Product removed from storefront' });
 });
 
 module.exports = {
